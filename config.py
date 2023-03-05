@@ -32,11 +32,11 @@ def conf():
 def model_conf(model_type):
     return config.get('model').get(model_type)
 
-def model_conf_val(model_type, key):
+def model_conf_val(model_type, key, default=None):
     val = config.get('model').get(model_type).get(key)
     if not val:
         # common default config
-        return config.get('model').get(key)
+        return config.get('model').get(key, default)
     return val
 
 
