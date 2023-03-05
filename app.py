@@ -1,4 +1,5 @@
 # encoding:utf-8
+import logging
 
 import config
 from channel import channel_factory
@@ -12,6 +13,7 @@ if __name__ == '__main__':
         model_type = config.conf().get("model").get("type")
         channel_type = config.conf().get("channel").get("type")
 
+        log.logger.setLevel(logging.getLevelName(config.conf().get("channel").get("log_level")))
         log.info("[INIT] Start up: {} on {}", model_type, channel_type)
 
         # create channel

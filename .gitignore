@@ -10,3 +10,4 @@ device.json
 go-cqhttp
 logs/
 session.token
+/config-ramber.json
